@@ -1,0 +1,40 @@
+﻿@using CodingEventsDemo.ViewModels
+@model CodingEventsDemo.ViewModels.AddEventViewModel;
+
+<h1>Add Event</h1>
+
+<form asp-controller="Events" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactEmail">Contact Email</label>
+        <input asp-for="ContactEmail" />
+        <span asp-validation-for="ContactEmail"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location"></label>
+        <input asp-for="Location" />
+        <span asp-validation-for="Location"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumberOfAttendees">Number of Attendees</label>
+        <input asp-for="NumberOfAttendees" />
+        <span asp-validation-for="NumberOfAttendees"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type">Event Types</label>
+        <select asp-for="Type" asp-items="Model.EventTypes" ></select>
+    </div>
+
+
+    <input type="submit" value="Add Event" />
+</form>
